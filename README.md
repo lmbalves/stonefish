@@ -2,6 +2,8 @@
 # ***Stonefish***
 ### An advanced simulation tool developed for marine robotics.
 
+> **Fork note (`jazzy` branch):** upstream Stonefish 1.6 ([patrykcieslak/stonefish](https://github.com/patrykcieslak/stonefish)) plus a fix for the ocean surface shaders failing to link with `unresolved reference to function ShadingModel` on strict drivers (e.g. NVIDIA, Ubuntu 24.04). Used by the IRIS AUV simulation ([lmbalves/iris_stonefish](https://github.com/lmbalves/iris_stonefish), `jazzy` branch) together with [lmbalves/stonefish_ros2](https://github.com/lmbalves/stonefish_ros2) `jazzy`.
+
 Stonefish is a C++ library combining a physics engine and a lightweight rendering pipeline. The physics engine is based on the core functionality of the [Bullet Physics](https://pybullet.org) library, extended to deliver realistic simulation of marine robots. It is directed towards researchers in the field of marine robotics but can as well be used as a general purpose robot simulator. 
 
 Stonefish includes advanced hydrodynamic computations based on actual geometry of bodies, to better approximate hydrodynamic forces and allow for effects not possible when using symbolic models. The rendering pipeline, developed from the ground up, delivers realistic rendering of atmosphere, ocean and underwater environment. Special focus was put on the latter, where effects of wavelength-dependent light absorption and scattering were considered (other simulators often use only blue fog). 
