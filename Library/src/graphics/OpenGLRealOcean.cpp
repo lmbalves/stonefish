@@ -74,6 +74,8 @@ OpenGLRealOcean::OpenGLRealOcean(GLfloat size, GLfloat state, SDL_mutex* hydrody
     GLuint pcssFragment = GLSLShader::LoadShader(GL_FRAGMENT_SHADER, "lighting.frag", "", &compiled);
     std::vector<GLuint> precompiled;
     precompiled.push_back(OpenGLAtmosphere::getAtmosphereAPI());
+    // lighting.frag declares ShadingModel(); link an implementation (kept before lighting.frag, which is pop_back()-ed later) or strict drivers fail to link
+    precompiled.push_back(GLSLShader::LoadShader(GL_FRAGMENT_SHADER, "blinnPhong.frag", "", &compiled));
     precompiled.push_back(pcssFragment);
 
     //Surface rendering
